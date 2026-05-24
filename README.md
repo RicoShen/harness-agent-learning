@@ -8,10 +8,10 @@
 
 | 用法 | 文件 |
 |---|---|
-| **第一次看** —— 七日精读,跟着走完 16 个核心章 | [`p0-sprint.html`](p0-sprint.html) |
+| **第一次看** —— 七日精读,跟着走完 16 个核心章 | [`pages/p0-sprint.html`](pages/p0-sprint.html) |
 | **完整教程** —— 32 章按 4 层组织,可随时查 | [`index.html`](index.html) |
-| **按场景查** —— 按"你遇到的问题"找推荐章节 | [`scenarios.html`](scenarios.html) |
-| **可视化总览** —— 知识地图 SVG | [`docs/harness_engineer_knowledge_map_v3_full.svg`](docs/harness_engineer_knowledge_map_v3_full.svg) |
+| **按场景查** —— 按"你遇到的问题"找推荐章节 | [`pages/scenarios.html`](pages/scenarios.html) |
+| **可视化总览** —— 知识地图 SVG | [`pages/images/harness_engineer_knowledge_map_v3_full.svg`](pages/images/harness_engineer_knowledge_map_v3_full.svg) |
 
 部署在 GitHub Pages 后直接 URL 访问;本地双击 HTML 也能看。
 
@@ -95,22 +95,30 @@ P0 章节列表:
 
 ```
 .
-├── README.md                                   # 本文件
-├── index.html                                  # 32 章完整教程
-├── p0-sprint.html                              # 核心章 · 七日精读
-├── scenarios.html                              # 按场景查的索引
-└── docs/
-    ├── harness_engineer_knowledge_map_v3_full.svg   # 可视化地图
-    └── Agent Harness 研发工程师.docx                # JD 参考(私有)
+├── README.md                                              # 本文件
+├── index.html                                             # 总览主页
+├── docs/                                                  # 参考文档(非网页消费)
+│   └── Agent Harness 研发工程师.docx                      # JD 参考(私有)
+└── pages/                                                 # 网页消费的所有资源
+    ├── chapters/                                          # 32 个章节文件
+    │   └── ch1.html ... ch32.html
+    ├── assets/                                            # 共享 CSS/JS/元数据
+    │   ├── styles.css
+    │   ├── app.js                                         # sidebar/搜索/导航/dark mode
+    │   └── chapters.json                                  # 章节元数据
+    ├── images/                                            # 图片资源
+    │   └── harness_engineer_knowledge_map_v3_full.svg     # 可视化知识地图
+    ├── p0-sprint.html                                     # 核心章 · 七日精读
+    └── scenarios.html                                     # 按场景查
 ```
 
 ## 怎么用
 
-**新手第一次** —— 打开 `p0-sprint.html`,按七日精读路径走。每天 2-3 章,跟着读 + 做练习,完成 9 道融合自检题。
+**新手第一次** —— 打开 `pages/p0-sprint.html`,按七日精读路径走。每天 2-3 章,跟着读 + 做练习,完成 9 道融合自检题。
 
 **作 reference** —— 打开 `index.html`,左侧 sidebar 32 章可跳。每节末的"速查"是一句话答,适合临场翻。
 
-**遇到具体问题** —— 打开 `scenarios.html`,按"你遇到的问题"找对应章节。比如"agent 卡死"、"context 不够用"、"模型升级了怎么办"等常见场景。
+**遇到具体问题** —— 打开 `pages/scenarios.html`,按"你遇到的问题"找对应章节。比如"agent 卡死"、"context 不够用"、"模型升级了怎么办"等常见场景。
 
 **整体浏览** —— 看 SVG 地图,32 个知识点按 4 层 + 优先级颜色编码一目了然。
 

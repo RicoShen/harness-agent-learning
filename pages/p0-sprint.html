@@ -111,7 +111,7 @@
 <div class="container">
 
 <nav class="top">
-  <a href="index.html">← 知识地图主页</a>
+  <a href="../index.html">← 知识地图主页</a>
   <a href="scenarios.html">按场景查</a>
   <a href="#day1">D1</a>
   <a href="#day2">D2</a>
@@ -148,11 +148,11 @@
   <div class="why">所有上层 agent 工程的物理基础。不懂 KV Cache,后面 Prompt Caching 的"省 90%"是抄公式;不懂 Prompt Caching,生产 agent 的账单永远是五位数。这一天解决"为什么 context 是稀缺资源"。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch2">
+    <a class="chapter" href="../chapters/ch2.html">
       <div class="ch-head"><span class="ch-num">02</span><span class="ch-title">KV Cache 原理</span><span class="badge l1">L1</span></div>
       <p class="ch-blurb">Transformer 推理时 K/V 缓存怎么让 O(N²) 降到 O(N)。Llama 70B 1 万 token 占 26GB 显存的物理算账。是后面所有"省 token"工程的基础。</p>
     </a>
-    <a class="chapter" href="index.html#ch3">
+    <a class="chapter" href="../chapters/ch3.html">
       <div class="ch-head"><span class="ch-num">03</span><span class="ch-title">Prompt Caching</span><span class="badge l1">L1</span></div>
       <p class="ch-blurb">Anthropic 5min/1hr 两档 TTL、命中 10%、写入 1.25/2.0×。cache 边界连续性规则。改 tool 描述为什么让 messages 全失效。</p>
     </a>
@@ -183,11 +183,11 @@
   <div class="why">Agent 的本质就是一个循环 + 工具调用协议。所有 framework / runtime / harness 都是在优化这两件事。掌握这一天,你能从 0 写出能跑的 agent;不掌握,你只能"用 SDK"。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch6">
+    <a class="chapter" href="../chapters/ch6.html">
       <div class="ch-head"><span class="ch-num">06</span><span class="ch-title">Agent Loop</span><span class="badge l2">L2</span></div>
       <p class="ch-blurb">think → tool_call → observe → repeat 的完整工程实现。6 层终止条件(end_turn / max_steps / max_tokens / 死循环 / 用户中断 / 致命错误)。50 行参考实现。</p>
     </a>
-    <a class="chapter" href="index.html#ch7">
+    <a class="chapter" href="../chapters/ch7.html">
       <div class="ch-head"><span class="ch-num">07</span><span class="ch-title">Tool Use 协议</span><span class="badge l2">L2</span></div>
       <p class="ch-blurb">tool 定义 / tool_use / tool_result 三对象。4 种 tool_choice 策略。is_error 显式 vs 静默 fail 的灾难性差异。30+ tool 导致的选择疲劳。</p>
     </a>
@@ -218,11 +218,11 @@
   <div class="why">"我做的是哪一类系统"是这个领域的术语关。Framework / Runtime / Harness / Platform 是四个抽象层,代表完全不同的所有权和工作深度。这一天给出精确边界,让你能清晰定位自己的工作在哪一层。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch11">
+    <a class="chapter" href="../chapters/ch11.html">
       <div class="ch-head"><span class="ch-num">11</span><span class="ch-title">Harness 概念边界</span><span class="badge l3">L3</span></div>
       <p class="ch-blurb">Framework / Runtime / Harness / Platform 四个抽象层的所有权对比表。5 个常见混淆 case(AutoGen / LangGraph / Agent SDK / hook extension / fork own loop)对号入座。</p>
     </a>
-    <a class="chapter" href="index.html#ch16">
+    <a class="chapter" href="../chapters/ch16.html">
       <div class="ch-head"><span class="ch-num">16</span><span class="ch-title">Agent SDK</span><span class="badge l3">L3</span></div>
       <p class="ch-blurb">Client SDK / Agent SDK / 自造 harness 三层对比。Agent SDK 替你 own 了 loop——什么时候够用、什么时候必须往下沉造 harness。</p>
     </a>
@@ -253,11 +253,11 @@
   <div class="why">demo 跑通和上生产之间隔着这两章。失败模式分类是事故复盘的共同语言,Prompt Injection 防御是合规上线的最低门槛。两件事都做好,你的 agent 不会因为读了一封邮件就删库。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch28">
+    <a class="chapter" href="../chapters/ch28.html">
       <div class="ch-head"><span class="ch-num">28</span><span class="ch-title">失败模式分类</span><span class="badge l3">L3</span></div>
       <p class="ch-blurb">6 大失败模式:tool hallucination、infinite loop、failed call 静默、OOM/Timeout、over-confidence、cascading failure。真实事故 trace 拆解叠加诊断方法。</p>
     </a>
-    <a class="chapter" href="index.html#ch29">
+    <a class="chapter" href="../chapters/ch29.html">
       <div class="ch-head"><span class="ch-num">29</span><span class="ch-title">Prompt Injection 防御</span><span class="badge l3">L3</span></div>
       <p class="ch-blurb">Direct vs Indirect injection 区别。6 种攻击向量(白色文字 / HTML 注释 / Unicode 不可见字符 / 多语言混杂等)。4 层防御(输入隔离 / 来源标记 / 执行门控 / 输出过滤)。</p>
     </a>
@@ -288,15 +288,15 @@
   <div class="why">L4 的概念底盘。Anthropic 官方 3 支柱是 context 工程的标准答案;4 类 Memory 是"记不住"问题的精确分类;MCP 是 agent 生态的 USB-C 接口。这一天打通 L4 的所有底层词汇。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch20">
+    <a class="chapter" href="../chapters/ch20.html">
       <div class="ch-head"><span class="ch-num">20</span><span class="ch-title">Context Engineering 3 支柱</span><span class="badge l4">L4</span></div>
       <p class="ch-blurb">Anthropic 2025-09 官方 3 支柱:Compaction / Note-taking / Multi-agent。不是 4 支柱(JIT Retrieval 是误传)。三者在一次会话怎么组合用。</p>
     </a>
-    <a class="chapter" href="index.html#ch24">
+    <a class="chapter" href="../chapters/ch24.html">
       <div class="ch-head"><span class="ch-num">24</span><span class="ch-title">Memory 4 类</span><span class="badge l4">L4</span></div>
       <p class="ch-blurb">In-context / External / Episodic / Semantic 四类对照表。各自实现路径。Cursor 真实 memory 流程拆解。"加 memory" 是含糊需求的回问三件套。</p>
     </a>
-    <a class="chapter" href="index.html#ch25">
+    <a class="chapter" href="../chapters/ch25.html">
       <div class="ch-head"><span class="ch-num">25</span><span class="ch-title">MCP 协议</span><span class="badge l4">L4</span></div>
       <p class="ch-blurb">Host / Client / Server 三角架构。Tools(model-controlled)/ Resources(application-controlled)/ Prompts(user-controlled)三原语 + 控制者维度。stdio vs SSE 传输。</p>
     </a>
@@ -327,15 +327,15 @@
   <div class="why">这一天是 harness 工程的真正前沿——做出 Claude Code / Cursor / Devin 级别产品所必需的架构。Long-Running 解决"任务跨多天",Three-Agent 解决"输出可信",Compaction vs Reset 解决"context 不够"。三件事缺一不可。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch17">
+    <a class="chapter" href="../chapters/ch17.html">
       <div class="ch-head"><span class="ch-num">17</span><span class="ch-title">Long-Running Agent</span><span class="badge l3">L3</span></div>
       <p class="ch-blurb">双 agent 架构(Initializer + Coding agent)。progress.md 的"班次交接表"四字段。Sonnet 4.5 context anxiety 案例。共享文档作为 cross-session memory。</p>
     </a>
-    <a class="chapter" href="index.html#ch21">
+    <a class="chapter" href="../chapters/ch21.html">
       <div class="ch-head"><span class="ch-num">21</span><span class="ch-title">Compaction vs Reset</span><span class="badge l4">L4</span></div>
       <p class="ch-blurb">Anthropic 2025-11 关键判断:"summarization-as-compaction is insufficient"。Compaction 信息漂移 vs Reset 干净。两种机制的决策树和组合使用。</p>
     </a>
-    <a class="chapter" href="index.html#ch18">
+    <a class="chapter" href="../chapters/ch18.html">
       <div class="ch-head"><span class="ch-num">18</span><span class="ch-title">Three-Agent Harness</span><span class="badge l3">L3</span></div>
       <p class="ch-blurb">Planner / Generator / Evaluator 三 agent 对抗架构(GAN 启发)。Default-FAIL Evaluator + Fresh-Context Evaluator 两大设计。Claude Code /goal 命令的工作流。</p>
     </a>
@@ -366,11 +366,11 @@
   <div class="why">前 6 天讲的是"造 harness",这一天讲"harness 怎么和模型一起活下去"。#27 是哲学层 P0,#32 是 harness 工程师区别于"普通 agent 开发者"的核心价值点。讲清这两章,你就理解了为什么 Anthropic 招的是"造产品本身的人"。</div>
 
   <div class="chapters">
-    <a class="chapter" href="index.html#ch27">
+    <a class="chapter" href="../chapters/ch27.html">
       <div class="ch-head"><span class="ch-num">27</span><span class="ch-title">模型协同演进</span><span class="badge l4">L4</span></div>
       <p class="ch-blurb">Sonnet 4.5 → Opus 4.5 context anxiety 案例。三条设计原则:机制开关化 / 优雅退化 / 不假定模型能力上限。模型升级 SOP 工作流。</p>
     </a>
-    <a class="chapter" href="index.html#ch32">
+    <a class="chapter" href="../chapters/ch32.html">
       <div class="ch-head"><span class="ch-num">32</span><span class="ch-title">Harness→Model 反馈闭环</span><span class="badge l4">L4</span></div>
       <p class="ch-blurb">4 条回流路径:成功 trace → SFT、失败 → RLHF preference pair、edge case → eval set、failure taxonomy → 训练 priority。契约式交付样例。</p>
     </a>
@@ -411,7 +411,7 @@
 </section>
 
 <footer>
-  Agent Harness 工程师知识地图 · 核心章 · 七日精读 · <a href="index.html">回主页</a><br>
+  Agent Harness 工程师知识地图 · 核心章 · 七日精读 · <a href="../index.html">回主页</a><br>
   内容基于 Anthropic / Cursor / Claude Code 2025-09 至 2026-05 公开工程实践归纳。
 </footer>
 

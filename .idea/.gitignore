@@ -11,3 +11,5 @@
 .idea/
 .idea
 *.iml
+/inspectionProfiles/Project_Default.xml
+/vcs.xml
