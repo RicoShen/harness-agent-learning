@@ -1,0 +1,217 @@
+<svg width="100%" viewBox="0 0 680 1090" role="img" xmlns="http://www.w3.org/2000/svg" font-family="Anthropic Sans, -apple-system, system-ui, sans-serif">
+<title>Agent Harness 工程师知识地图 v3 完整版</title>
+<desc>4 层共 32 个知识点，按优先级 P0/P1/P2 标注</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- L1 header -->
+<text x="40" y="38" fill="#141413" font-size="14" font-weight="500">L1 · 模型与 API 基础</text>
+<text x="40" y="56" fill="#3D3D3A" font-size="12">5 个知识点</text>
+
+<!-- L1 boxes (purple) -->
+<g onclick="sendPrompt('详细讲解 LLM 推理机制：tokenization、自回归生成、采样参数')">
+  <rect x="40" y="72" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="140" y="93" text-anchor="middle" dominant-baseline="central" fill="#3C3489" font-size="14" font-weight="500">1. LLM 推理机制</text>
+  <text x="140" y="111" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-size="12">P1 · token、采样、窗口</text>
+</g>
+<g onclick="sendPrompt('详细讲解 KV Cache 原理，以及对 Harness 工程的影响')">
+  <rect x="252" y="72" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="352" y="93" text-anchor="middle" dominant-baseline="central" fill="#3C3489" font-size="14" font-weight="500">2. KV Cache 原理</text>
+  <text x="352" y="111" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-size="12">P0 · 推理优化核心</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Prompt Caching，包括 cache_control 用法和最佳实践')">
+  <rect x="464" y="72" width="180" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="554" y="93" text-anchor="middle" dominant-baseline="central" fill="#3C3489" font-size="14" font-weight="500">3. Prompt Caching</text>
+  <text x="554" y="111" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-size="12">P0 · 成本降 90%</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Anthropic Messages API 实操，包括流式、tool_use、错误处理')">
+  <rect x="40" y="140" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="140" y="161" text-anchor="middle" dominant-baseline="central" fill="#3C3489" font-size="14" font-weight="500">4. LLM API 实操</text>
+  <text x="140" y="179" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-size="12">P1 · 流式 + tool_use</text>
+</g>
+<g onclick="sendPrompt('详细讲解 LLM 的 Structured Output，包括 JSON mode、XML 标签等')">
+  <rect x="252" y="140" width="200" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+  <text x="352" y="161" text-anchor="middle" dominant-baseline="central" fill="#3C3489" font-size="14" font-weight="500">5. Structured Output</text>
+  <text x="352" y="179" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-size="12">P1 · JSON、XML</text>
+</g>
+
+<line x1="40" y1="220" x2="640" y2="220" stroke="rgba(31,30,29,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+<!-- L2 header -->
+<text x="40" y="240" fill="#141413" font-size="14" font-weight="500">L2 · Agent 核心机制</text>
+<text x="40" y="258" fill="#3D3D3A" font-size="12">5 个知识点</text>
+
+<!-- L2 boxes (green) -->
+<g onclick="sendPrompt('详细讲解 Agent Loop 实现：think-act-observe、终止条件、错误恢复')">
+  <rect x="40" y="274" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="140" y="295" text-anchor="middle" dominant-baseline="central" fill="#085041" font-size="14" font-weight="500">6. Agent Loop</text>
+  <text x="140" y="313" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-size="12">P0 · 主循环</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Tool Use 协议：JSON Schema、parallel calls、tool_use_id')">
+  <rect x="252" y="274" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="352" y="295" text-anchor="middle" dominant-baseline="central" fill="#085041" font-size="14" font-weight="500">7. Tool Use 协议</text>
+  <text x="352" y="313" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-size="12">P0 · 核心抽象</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Tool 设计原则：粒度、命名、错误返回、幂等性')">
+  <rect x="464" y="274" width="180" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="554" y="295" text-anchor="middle" dominant-baseline="central" fill="#085041" font-size="14" font-weight="500">8. Tool 设计原则</text>
+  <text x="554" y="313" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-size="12">P1 · 粒度与边界</text>
+</g>
+<g onclick="sendPrompt('详细讲解 ReAct、CoT、Reflection、Plan-and-Execute 等推理模式')">
+  <rect x="40" y="342" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="140" y="363" text-anchor="middle" dominant-baseline="central" fill="#085041" font-size="14" font-weight="500">9. Reasoning 模式</text>
+  <text x="140" y="381" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-size="12">P2 · ReAct、CoT、ToT</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Anthropic SSE 流式处理：event 累积、tool_use 处理')">
+  <rect x="252" y="342" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+  <text x="352" y="363" text-anchor="middle" dominant-baseline="central" fill="#085041" font-size="14" font-weight="500">10. Streaming 处理</text>
+  <text x="352" y="381" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-size="12">P1 · SSE、事件累积</text>
+</g>
+
+<line x1="40" y1="425" x2="640" y2="425" stroke="rgba(31,30,29,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+<!-- L3 header -->
+<text x="40" y="445" fill="#141413" font-size="14" font-weight="500">L3 · Harness 工程（核心）</text>
+<text x="40" y="463" fill="#3D3D3A" font-size="12">12 个知识点，含 6 个 review 新增</text>
+
+<!-- L3 row 1 (orange) -->
+<g onclick="sendPrompt('详细讲解 Harness 概念边界：Framework / Runtime / Harness / Platform')">
+  <rect x="40" y="479" width="200" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="140" y="500" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-size="14" font-weight="500">11. Harness 概念边界</text>
+  <text x="140" y="518" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-size="12">P0 · 术语区分</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Lifecycle Hooks：before_loop、after_tool_call、on_error 等')">
+  <rect x="252" y="479" width="200" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="352" y="500" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-size="14" font-weight="500">12. Lifecycle Hooks</text>
+  <text x="352" y="518" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-size="12">P1 · PreCompact 等钩子</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Permission System：多层权限、两阶段决策、auto-approve')">
+  <rect x="464" y="479" width="180" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="554" y="500" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-size="14" font-weight="500">13. Permission System</text>
+  <text x="554" y="518" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-size="12">P1 · auto mode</text>
+</g>
+
+<!-- L3 row 2 -->
+<g onclick="sendPrompt('详细讲解 Sandbox 与执行环境：Docker、文件系统、超时、并发')">
+  <rect x="40" y="547" width="200" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="140" y="568" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-size="14" font-weight="500">14. Sandbox 与执行</text>
+  <text x="140" y="586" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-size="12">P1 · 隔离与超时</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Skills 系统：SKILL.md 元数据、progressive disclosure、与 Tool 的区别')">
+  <rect x="252" y="547" width="200" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="352" y="568" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-size="14" font-weight="500">15. Skills 系统</text>
+  <text x="352" y="586" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-size="12">P1 · SKILL.md 模式</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Agent SDK 与 Client SDK 的区别，何时用哪个')">
+  <rect x="464" y="547" width="180" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="554" y="568" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">16. Agent SDK ✨</text>
+  <text x="554" y="586" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 复用 vs 自造</text>
+</g>
+
+<!-- L3 row 3 -->
+<g onclick="sendPrompt('详细讲解 Long-Running Agent 架构：initializer + coding agent 模式')">
+  <rect x="40" y="615" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="140" y="636" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">17. Long-Running ✨</text>
+  <text x="140" y="654" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 跨 session</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Three-Agent Harness：Planner / Generator / Evaluator 架构')">
+  <rect x="252" y="615" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="352" y="636" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">18. Three-Agent ✨</text>
+  <text x="352" y="654" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · GAN 模式</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Agent 可观测性：trace、token 用量、langfuse 等')">
+  <rect x="464" y="615" width="180" height="56" rx="8" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+  <text x="554" y="636" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-size="14" font-weight="500">19. 可观测性</text>
+  <text x="554" y="654" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-size="12">P1 · trace、token</text>
+</g>
+
+<!-- L3 row 4 (NEW: 28, 29, 30 - all amber) -->
+<g onclick="sendPrompt('详细讲解 Harness Reliability 与失败模式分类学：tool 参数 hallucination、infinite loop、failed call 处理、retry 策略')">
+  <rect x="40" y="683" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="140" y="704" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">28. 失败模式分类 ✨</text>
+  <text x="140" y="722" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 新增 · loop、hallucination</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Harness 中的 Prompt Injection 防御：tool output 隔离、untrusted content 处理、indirect prompt injection')">
+  <rect x="252" y="683" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="352" y="704" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">29. Prompt Injection 防御 ✨</text>
+  <text x="352" y="722" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 新增 · tool output 隔离</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Multi-model routing 与成本工程：Haiku/Sonnet/Opus 分层调度、cache 命中率监控')">
+  <rect x="464" y="683" width="180" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="554" y="704" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">30. 成本/模型路由 ✨</text>
+  <text x="554" y="722" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P1 · 新增 · 分层调度</text>
+</g>
+
+<line x1="40" y1="755" x2="640" y2="755" stroke="rgba(31,30,29,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+<!-- L4 header -->
+<text x="40" y="775" fill="#141413" font-size="14" font-weight="500">L4 · Context、扩展与评估</text>
+<text x="40" y="793" fill="#3D3D3A" font-size="12">10 个知识点，含 4 个 review 新增</text>
+
+<!-- L4 row 1 (rose) -->
+<g onclick="sendPrompt('详细讲解 Context Engineering 三大支柱：compaction、note-taking、multi-agent')">
+  <rect x="40" y="809" width="200" height="56" rx="8" fill="#FBEAF0" stroke="#993556" stroke-width="0.5"/>
+  <text x="140" y="830" text-anchor="middle" dominant-baseline="central" fill="#72243E" font-size="14" font-weight="500">20. Context Eng 3 支柱</text>
+  <text x="140" y="848" text-anchor="middle" dominant-baseline="central" fill="#993556" font-size="12">P0 · 校准为 3 支柱</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Compaction vs Context Reset，区别与适用场景')">
+  <rect x="252" y="809" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="352" y="830" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">21. Compaction vs Reset ✨</text>
+  <text x="352" y="848" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 区别</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Sub-Agent 委派：context 隔离、结果浓缩')">
+  <rect x="464" y="809" width="180" height="56" rx="8" fill="#FBEAF0" stroke="#993556" stroke-width="0.5"/>
+  <text x="554" y="830" text-anchor="middle" dominant-baseline="central" fill="#72243E" font-size="14" font-weight="500">22. Sub-Agent 委派</text>
+  <text x="554" y="848" text-anchor="middle" dominant-baseline="central" fill="#993556" font-size="12">P1 · context 隔离</text>
+</g>
+
+<!-- L4 row 2 -->
+<g onclick="sendPrompt('详细讲解 Multi-Agent 编排：Orchestrator-Worker、通信、聚合')">
+  <rect x="40" y="877" width="200" height="56" rx="8" fill="#FBEAF0" stroke="#993556" stroke-width="0.5"/>
+  <text x="140" y="898" text-anchor="middle" dominant-baseline="central" fill="#72243E" font-size="14" font-weight="500">23. Multi-Agent 编排</text>
+  <text x="140" y="916" text-anchor="middle" dominant-baseline="central" fill="#993556" font-size="12">P1 · 并行协作</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Memory 4 类：in-context、external、episodic、semantic')">
+  <rect x="252" y="877" width="200" height="56" rx="8" fill="#FBEAF0" stroke="#993556" stroke-width="0.5"/>
+  <text x="352" y="898" text-anchor="middle" dominant-baseline="central" fill="#72243E" font-size="14" font-weight="500">24. Memory 4 类</text>
+  <text x="352" y="916" text-anchor="middle" dominant-baseline="central" fill="#993556" font-size="12">P0 · 区分四种</text>
+</g>
+<g onclick="sendPrompt('详细讲解 MCP 协议：Tool / Resource / Prompt 三原语和控制者区别')">
+  <rect x="464" y="877" width="180" height="56" rx="8" fill="#FBEAF0" stroke="#993556" stroke-width="0.5"/>
+  <text x="554" y="898" text-anchor="middle" dominant-baseline="central" fill="#72243E" font-size="14" font-weight="500">25. MCP 协议</text>
+  <text x="554" y="916" text-anchor="middle" dominant-baseline="central" fill="#993556" font-size="12">P0 · 三原语 + 传输</text>
+</g>
+
+<!-- L4 row 3 (26, 27 amber + NEW 32 amber) -->
+<g onclick="sendPrompt('详细讲解 Eval Harness：SWE-bench、Terminal-bench、LLM-as-judge 与 Agent-as-a-judge')">
+  <rect x="40" y="945" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="140" y="966" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">26. Eval Harness ✨</text>
+  <text x="140" y="984" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P1 · benchmark + judge</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Harness 与模型协同演进：为什么 Harness 会过时')">
+  <rect x="252" y="945" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="352" y="966" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">27. 模型协同演进 ✨</text>
+  <text x="352" y="984" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 哲学层</text>
+</g>
+<g onclick="sendPrompt('详细讲解 Harness 到 Model 训练的反馈闭环：trace 数据回流、failure 案例对齐 RLHF reward')">
+  <rect x="464" y="945" width="180" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="554" y="966" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">32. 反馈闭环 ✨</text>
+  <text x="554" y="984" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P0 · 新增 · trace → 训练</text>
+</g>
+
+<!-- L4 row 4 (NEW 31 amber + DeepSeek JD card) -->
+<g onclick="sendPrompt('详细讲解 Agent 运行的 Determinism 与 Replay：snapshot、复现、调试')">
+  <rect x="40" y="1013" width="200" height="56" rx="8" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text x="140" y="1034" text-anchor="middle" dominant-baseline="central" fill="#633806" font-size="14" font-weight="500">31. Determinism &amp; Replay ✨</text>
+  <text x="140" y="1052" text-anchor="middle" dominant-baseline="central" fill="#854F0B" font-size="12">P1 · 新增 · snapshot 复现</text>
+</g>
+<g>
+  <rect x="252" y="1013" width="392" height="56" rx="8" fill="none" stroke="rgba(31,30,29,0.15)" stroke-width="0.5" stroke-dasharray="4 4"/>
+  <text x="448" y="1034" text-anchor="middle" dominant-baseline="central" fill="#3D3D3A" font-size="12" font-weight="500">DeepSeek JD 命中区：26·27·32 = 「与研究员协作 + 持续迭代」三大职责</text>
+  <text x="448" y="1052" text-anchor="middle" dominant-baseline="central" fill="#3D3D3A" font-size="12">28·29·30 = 「生产级 harness 工程」核心战场</text>
+</g>
+
+</svg>
