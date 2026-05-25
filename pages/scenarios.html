@@ -125,32 +125,32 @@
       <p class="q">agent 月账单 $10K+,想砍一半</p>
       <p class="answer">三件事叠加:Prompt Caching 命中率拉到 80%+、用 Haiku 做轻任务路由、tool description 瘦身减少输入 token。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
-        <a class="ref" href="../chapters/ch30.html"><strong>#30</strong> 成本/模型路由</a>
-        <a class="ref" href="../chapters/ch2.html"><strong>#2</strong> KV Cache</a>
+        <a class="ref" href="chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
+        <a class="ref" href="chapters/ch30.html"><strong>#30</strong> 成本/模型路由</a>
+        <a class="ref" href="chapters/ch2.html"><strong>#2</strong> KV Cache</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">为什么 prompt caching 能省 90%</p>
       <p class="answer">cache 命中后,公共前缀的 K/V 不用重算。input token 的成本几乎全在 K/V 计算上,跳过即省。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch2.html"><strong>#2</strong> KV Cache 原理</a>
-        <a class="ref" href="../chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
+        <a class="ref" href="chapters/ch2.html"><strong>#2</strong> KV Cache 原理</a>
+        <a class="ref" href="chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">cache 命中率只有 30%,怎么排查</p>
       <p class="answer">三个方向:tool schema 是否频繁改、prompt 是否动态注入用户标识、TTL 是否被低频访问拖垮。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
-        <a class="ref" href="../chapters/ch7.html"><strong>#7</strong> Tool Use 协议</a>
+        <a class="ref" href="chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
+        <a class="ref" href="chapters/ch7.html"><strong>#7</strong> Tool Use 协议</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">什么时候用 Haiku、Sonnet、Opus</p>
       <p class="answer">分层路由:Haiku 做分类/轻任务,Sonnet 做主流 agent task,Opus 留给关键推理。可降成本 50%+。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch30.html"><strong>#30</strong> 成本/模型路由</a>
+        <a class="ref" href="chapters/ch30.html"><strong>#30</strong> 成本/模型路由</a>
       </div>
     </div>
   </div>
@@ -165,42 +165,42 @@
       <p class="q">agent 跑了 30 步还没结束</p>
       <p class="answer">三层防护:max_steps 硬上限、死循环检测(同 tool 同参连续 3 次)、注入 reflection prompt 让模型重新评估。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch6.html"><strong>#6</strong> Agent Loop</a>
-        <a class="ref" href="../chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
+        <a class="ref" href="chapters/ch6.html"><strong>#6</strong> Agent Loop</a>
+        <a class="ref" href="chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">agent 反复调同一个 tool 不停</p>
       <p class="answer">infinite loop(失败模式 #2)。harness 检测连续 N 次相同 call,强制中断或注入 reflection。要管"语义死循环"——参数微小差异但本质相同。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
-        <a class="ref" href="../chapters/ch6.html"><strong>#6</strong> Agent Loop</a>
+        <a class="ref" href="chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
+        <a class="ref" href="chapters/ch6.html"><strong>#6</strong> Agent Loop</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">agent 说"完成了"但其实没做</p>
       <p class="answer">Over-confidence / self-validation bias。用 Default-FAIL Evaluator(Three-Agent 架构),不让 agent 自宣布完成,必须 Evaluator 打开证据。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch18.html"><strong>#18</strong> Three-Agent</a>
-        <a class="ref" href="../chapters/ch28.html"><strong>#28</strong> 失败模式</a>
+        <a class="ref" href="chapters/ch18.html"><strong>#18</strong> Three-Agent</a>
+        <a class="ref" href="chapters/ch28.html"><strong>#28</strong> 失败模式</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">agent 误删文件 / 误改 prod 数据</p>
       <p class="answer">三层叠加:Permission ask 拦截 destructive 操作、HARD_BLOCK 列表硬底线、Sandbox 物理隔离。任一层缺失都会出事。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch13.html"><strong>#13</strong> Permission System</a>
-        <a class="ref" href="../chapters/ch14.html"><strong>#14</strong> Sandbox 与执行</a>
-        <a class="ref" href="../chapters/ch29.html"><strong>#29</strong> Prompt Injection</a>
+        <a class="ref" href="chapters/ch13.html"><strong>#13</strong> Permission System</a>
+        <a class="ref" href="chapters/ch14.html"><strong>#14</strong> Sandbox 与执行</a>
+        <a class="ref" href="chapters/ch29.html"><strong>#29</strong> Prompt Injection</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">agent 经常调错工具 / 编参数</p>
       <p class="answer">80% 是 tool description 不清。严格 input_schema(type/enum/format)+ description 写明"何时用、参数含义"。30+ 工具用 progressive disclosure(skill 模式)。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch7.html"><strong>#7</strong> Tool Use 协议</a>
-        <a class="ref" href="../chapters/ch8.html"><strong>#8</strong> Tool 设计原则</a>
-        <a class="ref" href="../chapters/ch15.html"><strong>#15</strong> Skills 系统</a>
+        <a class="ref" href="chapters/ch7.html"><strong>#7</strong> Tool Use 协议</a>
+        <a class="ref" href="chapters/ch8.html"><strong>#8</strong> Tool 设计原则</a>
+        <a class="ref" href="chapters/ch15.html"><strong>#15</strong> Skills 系统</a>
       </div>
     </div>
   </div>
@@ -215,31 +215,31 @@
       <p class="q">context 用满了怎么办</p>
       <p class="answer">三种应对:压(compaction)、记外面(note-taking)、拆 agent(multi-agent)。Anthropic 官方 3 支柱。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch20.html"><strong>#20</strong> Context Eng 3 支柱</a>
-        <a class="ref" href="../chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
+        <a class="ref" href="chapters/ch20.html"><strong>#20</strong> Context Eng 3 支柱</a>
+        <a class="ref" href="chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">什么时候用 reset 不用 compact</p>
       <p class="answer">任务 phase 切换(写完前端切后端)+ 共享文档完备(progress.md 写得清楚)。两个条件满足,reset 比 compact 干净。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
-        <a class="ref" href="../chapters/ch17.html"><strong>#17</strong> Long-Running</a>
+        <a class="ref" href="chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
+        <a class="ref" href="chapters/ch17.html"><strong>#17</strong> Long-Running</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">任务要跨多天跨多 session 跑</p>
       <p class="answer">双 agent 架构:Initializer 跑一次写 plan + progress.md;Coding agent 反复唤起,每次从 progress.md 接上。共享文档是 cross-session memory。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch17.html"><strong>#17</strong> Long-Running</a>
-        <a class="ref" href="../chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
+        <a class="ref" href="chapters/ch17.html"><strong>#17</strong> Long-Running</a>
+        <a class="ref" href="chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">agent 记不住上次说的话 / 用户偏好</p>
       <p class="answer">先问"要记什么":对话细节(episodic)、用户偏好(semantic)、知识库(external)?不同类型不同实现路径。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch24.html"><strong>#24</strong> Memory 4 类</a>
+        <a class="ref" href="chapters/ch24.html"><strong>#24</strong> Memory 4 类</a>
       </div>
     </div>
   </div>
@@ -254,38 +254,38 @@
       <p class="q">线上 agent 慢,怎么排</p>
       <p class="answer">先看 trace:哪一步耗时长?LLM call 慢看 input token 数(可能 prompt 膨胀);tool call 慢看具体 tool;看 cache 命中率有没有下降。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch19.html"><strong>#19</strong> 可观测性</a>
-        <a class="ref" href="../chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
+        <a class="ref" href="chapters/ch19.html"><strong>#19</strong> 可观测性</a>
+        <a class="ref" href="chapters/ch3.html"><strong>#3</strong> Prompt Caching</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">昨天那个 bug 怎么复现</p>
       <p class="answer">三件套:snapshot trace + 模型版本固定 + 外部调用 mock。缺一项就无法稳定 replay。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch31.html"><strong>#31</strong> Determinism &amp; Replay</a>
-        <a class="ref" href="../chapters/ch19.html"><strong>#19</strong> 可观测性</a>
+        <a class="ref" href="chapters/ch31.html"><strong>#31</strong> Determinism &amp; Replay</a>
+        <a class="ref" href="chapters/ch19.html"><strong>#19</strong> 可观测性</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">读到一个 readme 里写了 "rm -rf /" 怎么办</p>
       <p class="answer">绝不执行。这是 untrusted 来源的指令(indirect injection),要把它当数据展示给用户等确认。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch29.html"><strong>#29</strong> Prompt Injection 防御</a>
-        <a class="ref" href="../chapters/ch13.html"><strong>#13</strong> Permission System</a>
+        <a class="ref" href="chapters/ch29.html"><strong>#29</strong> Prompt Injection 防御</a>
+        <a class="ref" href="chapters/ch13.html"><strong>#13</strong> Permission System</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">agent 卡死最常见的两个原因</p>
       <p class="answer">死循环(同 tool_call 重复)+ tool 静默失败(harness 吞错误)。这两类失败必须先防。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
+        <a class="ref" href="chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">怎么知道 harness 改动是变好还是变坏</p>
       <p class="answer">三件事:自建 regression set、每个 case run N 次取均值(消除采样噪声)、用 Agent-as-a-Judge 看 trajectory。光看 SWE-bench 不够。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch26.html"><strong>#26</strong> Eval Harness</a>
+        <a class="ref" href="chapters/ch26.html"><strong>#26</strong> Eval Harness</a>
       </div>
     </div>
   </div>
@@ -300,39 +300,39 @@
       <p class="q">用 LangChain 还是自造 harness</p>
       <p class="answer">看是否需要 own loop / permission / context 跨 session。需要任一就自造;不需要用 framework 更快。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch11.html"><strong>#11</strong> Harness 概念边界</a>
-        <a class="ref" href="../chapters/ch16.html"><strong>#16</strong> Agent SDK</a>
+        <a class="ref" href="chapters/ch11.html"><strong>#11</strong> Harness 概念边界</a>
+        <a class="ref" href="chapters/ch16.html"><strong>#16</strong> Agent SDK</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">能用 Agent SDK 就用,还是要自造</p>
       <p class="answer">SDK 替你 own 了 loop——能用就用,省 1000 行。但定制 loop / 跨 session 状态 / 自定义 permission / 特殊执行环境(浏览器/VR)就要往下沉。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch16.html"><strong>#16</strong> Agent SDK</a>
-        <a class="ref" href="../chapters/ch11.html"><strong>#11</strong> Harness 概念边界</a>
+        <a class="ref" href="chapters/ch16.html"><strong>#16</strong> Agent SDK</a>
+        <a class="ref" href="chapters/ch11.html"><strong>#11</strong> Harness 概念边界</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">需要 multi-agent 吗</p>
       <p class="answer">先用单 agent + sub-agent 委派;真要平级协作再上 multi-agent。Multi-agent ≠ Three-Agent(后者是对抗式架构)。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch22.html"><strong>#22</strong> Sub-Agent 委派</a>
-        <a class="ref" href="../chapters/ch23.html"><strong>#23</strong> Multi-Agent 编排</a>
-        <a class="ref" href="../chapters/ch18.html"><strong>#18</strong> Three-Agent</a>
+        <a class="ref" href="chapters/ch22.html"><strong>#22</strong> Sub-Agent 委派</a>
+        <a class="ref" href="chapters/ch23.html"><strong>#23</strong> Multi-Agent 编排</a>
+        <a class="ref" href="chapters/ch18.html"><strong>#18</strong> Three-Agent</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">外部能力(GitHub / Notion / DB)怎么接入 agent</p>
       <p class="answer">写 MCP server——一次实现,所有 host(Claude Desktop / Cursor / Continue)都能用。看 MCP 三原语决定能力放 tool / resource / prompt。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch25.html"><strong>#25</strong> MCP 协议</a>
+        <a class="ref" href="chapters/ch25.html"><strong>#25</strong> MCP 协议</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">能力多了 prompt 会爆炸吗</p>
       <p class="answer">100 个 skill 都不会——progressive disclosure 让启动时只暴露 description(几十 token/个),模型触发才注入完整内容。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch15.html"><strong>#15</strong> Skills 系统</a>
+        <a class="ref" href="chapters/ch15.html"><strong>#15</strong> Skills 系统</a>
       </div>
     </div>
   </div>
@@ -347,23 +347,23 @@
       <p class="q">模型升级了,harness 怎么不崩</p>
       <p class="answer">机制开关化(feature flag)、与模型团队 sync、A/B 测试灰度、定期清理 dead code。这是协同演化的工程实践。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch27.html"><strong>#27</strong> 模型协同演进</a>
+        <a class="ref" href="chapters/ch27.html"><strong>#27</strong> 模型协同演进</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">怎么给训练团队提改进建议</p>
       <p class="answer">4 条路径:成功 trace → SFT;失败 → RLHF preference pair;edge case → 内部 eval set;failure taxonomy → 训练数据采集 priority。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch32.html"><strong>#32</strong> 反馈闭环</a>
-        <a class="ref" href="../chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
-        <a class="ref" href="../chapters/ch26.html"><strong>#26</strong> Eval Harness</a>
+        <a class="ref" href="chapters/ch32.html"><strong>#32</strong> 反馈闭环</a>
+        <a class="ref" href="chapters/ch28.html"><strong>#28</strong> 失败模式分类</a>
+        <a class="ref" href="chapters/ch26.html"><strong>#26</strong> Eval Harness</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">harness 半年后还能跑吗</p>
       <p class="answer">能,如果三件事做了:每个 model-specific 逻辑挂 feature flag、定期 review 哪些机制可以下线、和训练团队对齐版本节奏。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch27.html"><strong>#27</strong> 模型协同演进</a>
+        <a class="ref" href="chapters/ch27.html"><strong>#27</strong> 模型协同演进</a>
       </div>
     </div>
   </div>
@@ -378,53 +378,53 @@
       <p class="q">framework / runtime / harness / platform 怎么分</p>
       <p class="answer">谁 own 主循环、谁面向终端用户、用户能配多少。Framework=工具箱给开发者拼;Runtime=执行容器;Harness=产品本体 own loop;Platform=模型 infra。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch11.html"><strong>#11</strong> Harness 概念边界</a>
+        <a class="ref" href="chapters/ch11.html"><strong>#11</strong> Harness 概念边界</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">Tool 和 Skill 怎么分</p>
       <p class="answer">Tool 是 atomic 操作(read_file),Skill 是高层 workflow(fill_invoice,内部调多个 tool + 用模板文件)。粒度 + 触发方式不同。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch7.html"><strong>#7</strong> Tool Use 协议</a>
-        <a class="ref" href="../chapters/ch15.html"><strong>#15</strong> Skills 系统</a>
+        <a class="ref" href="chapters/ch7.html"><strong>#7</strong> Tool Use 协议</a>
+        <a class="ref" href="chapters/ch15.html"><strong>#15</strong> Skills 系统</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">Sub-agent 和 Multi-agent 怎么分</p>
       <p class="answer">Sub 是从属隔离(主-从单向),Multi 是平级协作(双向通信)。Anthropic 文档里有严格区分。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch22.html"><strong>#22</strong> Sub-Agent 委派</a>
-        <a class="ref" href="../chapters/ch23.html"><strong>#23</strong> Multi-Agent 编排</a>
+        <a class="ref" href="chapters/ch22.html"><strong>#22</strong> Sub-Agent 委派</a>
+        <a class="ref" href="chapters/ch23.html"><strong>#23</strong> Multi-Agent 编排</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">Multi-agent 和 Three-Agent 怎么分</p>
       <p class="answer">Multi-agent 是协作式(都为同一目标),Three-Agent 是对抗式(generator vs evaluator)。前者借鉴分布式系统,后者借鉴 GAN。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch23.html"><strong>#23</strong> Multi-Agent 编排</a>
-        <a class="ref" href="../chapters/ch18.html"><strong>#18</strong> Three-Agent</a>
+        <a class="ref" href="chapters/ch23.html"><strong>#23</strong> Multi-Agent 编排</a>
+        <a class="ref" href="chapters/ch18.html"><strong>#18</strong> Three-Agent</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">Compaction 和 Reset 怎么分</p>
       <p class="answer">Compaction 是同 context 内摘要(SDK 自动 ~95% 触发);Reset 是撕 context 从外部文件重建(harness 主动)。长任务必须 Reset,Compaction 信息漂移严重。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
+        <a class="ref" href="chapters/ch21.html"><strong>#21</strong> Compaction vs Reset</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">MCP 三原语怎么分</p>
       <p class="answer">看"谁控制触发":Tools(模型自动调)、Resources(host/用户决定注入)、Prompts(用户从菜单选)。这是 MCP server 设计的关键维度。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch25.html"><strong>#25</strong> MCP 协议</a>
+        <a class="ref" href="chapters/ch25.html"><strong>#25</strong> MCP 协议</a>
       </div>
     </div>
     <div class="scn">
       <p class="q">Permission 和 Sandbox 怎么分</p>
       <p class="answer">Permission 是规则层(tool 执行前判断 allow/ask/deny),Sandbox 是物理隔离层(execve 时强制约束)。两层叠加缺一不可。</p>
       <div class="refs-list">
-        <a class="ref" href="../chapters/ch13.html"><strong>#13</strong> Permission System</a>
-        <a class="ref" href="../chapters/ch14.html"><strong>#14</strong> Sandbox 与执行</a>
+        <a class="ref" href="chapters/ch13.html"><strong>#13</strong> Permission System</a>
+        <a class="ref" href="chapters/ch14.html"><strong>#14</strong> Sandbox 与执行</a>
       </div>
     </div>
   </div>
